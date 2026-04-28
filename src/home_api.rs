@@ -1,3 +1,4 @@
+use std::cmp::Ordering;
 #[cfg(feature = "server")]
 use std::sync::LazyLock;
 
@@ -49,26 +50,26 @@ pub enum ImageTime {
 }
 
 impl ImageTime {
-    pub fn year(&self) -> String {
+    pub fn year(&self) -> Option<u32> {
         match self {
-            ImageTime::Unknown => "Unknown".to_string(),
-            ImageTime::Specific { year, .. } => year.to_string(),
+            ImageTime::Unknown => None,
+            ImageTime::Specific { year, .. } => Some(*year),
         }
     }
 }
 
 impl PartialOrd for ImageTime {
-    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
+    fn partial_cmp(&self, other: &Self) -> Option<Ordering> {
         Some(self.cmp(other))
     }
 }
 
 impl Ord for ImageTime {
-    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
+    fn cmp(&self, other: &Self) -> Ordering {
         match (self, other) {
-            (ImageTime::Unknown, ImageTime::Unknown) => std::cmp::Ordering::Equal,
-            (ImageTime::Unknown, ImageTime::Specific { .. }) => std::cmp::Ordering::Greater,
-            (ImageTime::Specific { .. }, ImageTime::Unknown) => std::cmp::Ordering::Less,
+            (ImageTime::Unknown, ImageTime::Unknown) => Ordering::Equal,
+            (ImageTime::Unknown, ImageTime::Specific { .. }) => Ordering::Less,
+            (ImageTime::Specific { .. }, ImageTime::Unknown) => Ordering::Greater,
             (
                 ImageTime::Specific {
                     year: y1,
