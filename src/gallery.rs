@@ -7,7 +7,7 @@ use dioxus::prelude::*;
 static IMAGES: LazyLock<Vec<Image>> = LazyLock::new(|| {
     vec![
         Image {
-            asset: asset!("../assets/images/2024_01_05.png"),
+            asset: asset!("/assets/images/2024_01_05.png"),
             time: ImageTime::Specific {
                 day: 5,
                 month: 1,
@@ -15,7 +15,7 @@ static IMAGES: LazyLock<Vec<Image>> = LazyLock::new(|| {
             },
         },
         Image {
-            asset: asset!("../assets/images/2024_03_17.png"),
+            asset: asset!("/assets/images/2024_03_17.png"),
             time: ImageTime::Specific {
                 day: 17,
                 month: 3,
@@ -23,7 +23,7 @@ static IMAGES: LazyLock<Vec<Image>> = LazyLock::new(|| {
             },
         },
         Image {
-            asset: asset!("../assets/images/2024_04_15.png"),
+            asset: asset!("/assets/images/2024_04_15.png"),
             time: ImageTime::Specific {
                 day: 15,
                 month: 4,
@@ -31,7 +31,7 @@ static IMAGES: LazyLock<Vec<Image>> = LazyLock::new(|| {
             },
         },
         Image {
-            asset: asset!("../assets/images/2024_10_12.png"),
+            asset: asset!("/assets/images/2024_10_12.png"),
             time: ImageTime::Specific {
                 day: 12,
                 month: 10,
@@ -39,7 +39,7 @@ static IMAGES: LazyLock<Vec<Image>> = LazyLock::new(|| {
             },
         },
         Image {
-            asset: asset!("../assets/images/2025_07_24.png"),
+            asset: asset!("/assets/images/2025_07_24.png"),
             time: ImageTime::Specific {
                 day: 24,
                 month: 7,
@@ -47,7 +47,7 @@ static IMAGES: LazyLock<Vec<Image>> = LazyLock::new(|| {
             },
         },
         Image {
-            asset: asset!("../assets/images/2025_11_11.png"),
+            asset: asset!("/assets/images/2025_11_11.png"),
             time: ImageTime::Specific {
                 day: 11,
                 month: 11,
@@ -55,7 +55,7 @@ static IMAGES: LazyLock<Vec<Image>> = LazyLock::new(|| {
             },
         },
         Image {
-            asset: asset!("../assets/images/2026_03_21.png"),
+            asset: asset!("/assets/images/2026_03_21.png"),
             time: ImageTime::Specific {
                 day: 21,
                 month: 3,
@@ -63,7 +63,7 @@ static IMAGES: LazyLock<Vec<Image>> = LazyLock::new(|| {
             },
         },
         Image {
-            asset: asset!("../assets/images/2026_04_01.png"),
+            asset: asset!("/assets/images/2026_04_01.png"),
             time: ImageTime::Specific {
                 day: 1,
                 month: 4,
@@ -71,7 +71,7 @@ static IMAGES: LazyLock<Vec<Image>> = LazyLock::new(|| {
             },
         },
         Image {
-            asset: asset!("../assets/images/2026_04_18.png"),
+            asset: asset!("/assets/images/2026_04_18.png"),
             time: ImageTime::Specific {
                 day: 18,
                 month: 4,
