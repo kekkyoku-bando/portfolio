@@ -4,6 +4,7 @@
 
 # HTML title tag content
 title = "allimehcla"
+base_path = "portfolio"
 
 # include `assets` in web platform
 [web.resource]
