@@ -7,10 +7,106 @@ use dioxus::prelude::*;
 static IMAGES: LazyLock<Vec<Image>> = LazyLock::new(|| {
     vec![
         Image {
+            asset: asset!("/assets/images/2023_04_15.png"),
+            time: ImageTime::Specific {
+                day: 15,
+                month: 4,
+                year: 2023,
+            },
+        },
+        Image {
+            asset: asset!("/assets/images/2023_05_27.png"),
+            time: ImageTime::Specific {
+                day: 27,
+                month: 5,
+                year: 2023,
+            },
+        },
+        Image {
+            asset: asset!("/assets/images/2023_05_30.png"),
+            time: ImageTime::Specific {
+                day: 30,
+                month: 5,
+                year: 2023,
+            },
+        },
+        Image {
+            asset: asset!("/assets/images/2023_07_21.png"),
+            time: ImageTime::Specific {
+                day: 21,
+                month: 7,
+                year: 2023,
+            },
+        },
+        Image {
+            asset: asset!("/assets/images/2023_07_30.png"),
+            time: ImageTime::Specific {
+                day: 30,
+                month: 7,
+                year: 2023,
+            },
+        },
+        Image {
+            asset: asset!("/assets/images/2023_08_23.png"),
+            time: ImageTime::Specific {
+                day: 23,
+                month: 8,
+                year: 2023,
+            },
+        },
+        Image {
+            asset: asset!("/assets/images/2023_08_30.png"),
+            time: ImageTime::Specific {
+                day: 30,
+                month: 8,
+                year: 2023,
+            },
+        },
+        Image {
+            asset: asset!("/assets/images/2023_11_11.png"),
+            time: ImageTime::Specific {
+                day: 11,
+                month: 11,
+                year: 2023,
+            },
+        },
+        Image {
+            asset: asset!("/assets/images/2023_12_09.png"),
+            time: ImageTime::Specific {
+                day: 9,
+                month: 12,
+                year: 2023,
+            },
+        },
+        Image {
+            asset: asset!("/assets/images/2023_12_10.png"),
+            time: ImageTime::Specific {
+                day: 10,
+                month: 12,
+                year: 2023,
+            },
+        },
+        Image {
             asset: asset!("/assets/images/2024_01_05.png"),
             time: ImageTime::Specific {
                 day: 5,
                 month: 1,
+                year: 2024,
+            },
+        },
+        Image {
+            asset: asset!("/assets/images/2024_01_30.png"),
+            time: ImageTime::Specific {
+                day: 30,
+                month: 1,
+                year: 2024,
+            },
+        },
+        Image {
+            asset: asset!("/assets/images/2024_02_02_2.png"),
+            time: ImageTime::Specific {
+                day: 2,
+                month: 2,
                 year: 2024,
             },
         },
@@ -31,6 +127,14 @@ static IMAGES: LazyLock<Vec<Image>> = LazyLock::new(|| {
             },
         },
         Image {
+            asset: asset!("/assets/images/2024_08_31.png"),
+            time: ImageTime::Specific {
+                day: 31,
+                month: 8,
+                year: 2024,
+            },
+        },
+        Image {
             asset: asset!("/assets/images/2024_10_12.png"),
             time: ImageTime::Specific {
                 day: 12,
@@ -47,10 +151,26 @@ static IMAGES: LazyLock<Vec<Image>> = LazyLock::new(|| {
             },
         },
         Image {
+            asset: asset!("/assets/images/2025_05_21.png"),
+            time: ImageTime::Specific {
+                day: 21,
+                month: 5,
+                year: 2025,
+            },
+        },
+        Image {
             asset: asset!("/assets/images/2025_07_24.png"),
             time: ImageTime::Specific {
                 day: 24,
                 month: 7,
+                year: 2025,
+            },
+        },
+        Image {
+            asset: asset!("/assets/images/2025_08_14.png"),
+            time: ImageTime::Specific {
+                day: 14,
+                month: 8,
                 year: 2025,
             },
         },
@@ -63,10 +183,42 @@ static IMAGES: LazyLock<Vec<Image>> = LazyLock::new(|| {
             },
         },
         Image {
+            asset: asset!("/assets/images/2025_09_29.png"),
+            time: ImageTime::Specific {
+                day: 29,
+                month: 9,
+                year: 2025,
+            },
+        },
+        Image {
+            asset: asset!("/assets/images/2025_09_29_2.png"),
+            time: ImageTime::Specific {
+                day: 29,
+                month: 9,
+                year: 2025,
+            },
+        },
+        Image {
             asset: asset!("/assets/images/2025_11_11.png"),
             time: ImageTime::Specific {
                 day: 11,
                 month: 11,
+                year: 2025,
+            },
+        },
+        Image {
+            asset: asset!("/assets/images/2025_11_27.png"),
+            time: ImageTime::Specific {
+                day: 27,
+                month: 11,
+                year: 2025,
+            },
+        },
+        Image {
+            asset: asset!("/assets/images/2025_12_06.png"),
+            time: ImageTime::Specific {
+                day: 6,
+                month: 12,
                 year: 2025,
             },
         },
@@ -122,6 +274,22 @@ static IMAGES: LazyLock<Vec<Image>> = LazyLock::new(|| {
             asset: asset!("/assets/images/2026_03_21.png"),
             time: ImageTime::Specific {
                 day: 21,
+                month: 3,
+                year: 2026,
+            },
+        },
+        Image {
+            asset: asset!("/assets/images/2026_03_26.png"),
+            time: ImageTime::Specific {
+                day: 26,
+                month: 3,
+                year: 2026,
+            },
+        },
+        Image {
+            asset: asset!("/assets/images/2026_03_26_2.png"),
+            time: ImageTime::Specific {
+                day: 26,
                 month: 3,
                 year: 2026,
             },
@@ -216,6 +384,7 @@ pub fn Gallery() -> Element {
 
 #[component]
 fn Content(images: ReadSignal<HashMap<Option<u32>, Vec<Image>>>) -> Element {
+    let mut lightbox_image = use_signal(|| None::<Asset>);
     const COLUMNS: usize = 4;
 
     let sorted: Memo<Vec<(String, Vec<Vec<Image>>)>> = use_memo(move || {
@@ -251,12 +420,7 @@ fn Content(images: ReadSignal<HashMap<Option<u32>, Vec<Image>>>) -> Element {
 
     rsx! {
         div { class: "flex flex-col",
-            p {
-                "This is a selected collection of my works throughout each year. It is organized from left to right and top to bottom, with most recent works on the left."
-            }
-            p {
-                "I spend the majority of my time drawing so color is still something I am trying to figure out..."
-            }
+            p { "This is a selected collection of my works throughout each year." }
             p { class: "text-base", "Email: allimehcla@gmail.com" }
             p { class: "text-base", "X: allimehcla" }
             br {}
@@ -270,14 +434,28 @@ fn Content(images: ReadSignal<HashMap<Option<u32>, Vec<Image>>>) -> Element {
                                 for image in column {
                                     div {
                                         img {
-                                            class: "h-auto max-w-full",
+                                            class: "h-auto max-w-full cursor-pointer",
                                             src: image.asset,
+                                            onclick: move |_| {
+                                                lightbox_image.set(Some(image.asset));
+                                            },
                                         }
                                     }
                                 }
                             }
                         }
                     }
+                }
+            }
+        }
+
+        if let Some(asset) = lightbox_image() {
+            div {
+                class: "fixed inset-0 z-50 flex items-center justify-center p-2 bg-black/80 cursor-pointer",
+                onclick: move |_| lightbox_image.set(None),
+                img {
+                    class: "max-w-full max-h-[calc(100vh-4rem)] object-contain",
+                    src: asset,
                 }
             }
         }
