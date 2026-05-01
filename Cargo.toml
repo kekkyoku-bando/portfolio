@@ -12,3 +12,10 @@ dioxus = "0.7.6"
 [features]
 default = []
 web = ["dioxus/web"]
+
+[build-dependencies]
+serde_json = "1.0"
+quote = "1.0"
+prettyplease = "0.2.37"
+proc-macro2 = "1.0.106"
+syn = "2.0.117"
